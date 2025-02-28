@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		83CD16772D71732100F56534 /* SplineRuntime in Frameworks */ = {isa = PBXBuildFile; productRef = 83CD16762D71732100F56534 /* SplineRuntime */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		836F50AC2D716D90008345A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -52,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83CD16772D71732100F56534 /* SplineRuntime in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -112,6 +117,7 @@
 			);
 			name = Livinit;
 			packageProductDependencies = (
+				83CD16762D71732100F56534 /* SplineRuntime */,
 			);
 			productName = Livinit;
 			productReference = 836F509B2D716D8F008345A8 /* Livinit.app */;
@@ -195,6 +201,9 @@
 			);
 			mainGroup = 836F50922D716D8F008345A8;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				836F50D72D71709F008345A8 /* XCRemoteSwiftPackageReference "spline-ios" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 836F509C2D716D8F008345A8 /* Products */;
 			projectDirPath = "";
@@ -396,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Livinit/Preview Content\"";
+				DEVELOPMENT_TEAM = FC59XG4B9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -424,6 +434,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Livinit/Preview Content\"";
+				DEVELOPMENT_TEAM = FC59XG4B9N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -552,6 +563,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		836F50D72D71709F008345A8 /* XCRemoteSwiftPackageReference "spline-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/splinetool/spline-ios";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83CD16762D71732100F56534 /* SplineRuntime */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 836F50D72D71709F008345A8 /* XCRemoteSwiftPackageReference "spline-ios" */;
+			productName = SplineRuntime;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 836F50932D716D8F008345A8 /* Project object */;
 }
