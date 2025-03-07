@@ -8,7 +8,7 @@
 import SwiftUI
 import WebKit
 
-struct RoomDetailPage: View {
+struct RoomDetailView: View {
     let roomType: RoomType
     
     var body: some View {
@@ -18,5 +18,5 @@ struct RoomDetailPage: View {
 }
 
 #Preview {
-    RoomDetailPage(roomType: .standard) // .standard or .modern
+    RoomDetailView(roomType: .livingRoom1)
 }
