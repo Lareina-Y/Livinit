@@ -46,20 +46,12 @@ struct LoginView: View {
             }
             
             // Login Button
-            Button(action: {
-                print("Email: \(email) | Password: \(password)")
-            }) {
-                Text("Login")
-                    .font(.headline)
-                    .foregroundColor(.white)
-                    .bold()
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .background(.accent)
-                    .cornerRadius(30)
-                    .shadow(radius: 5)
-            }
-            .padding(.horizontal, 30)
+            PrimaryButton(
+                title: "Login",
+                action: {
+                    print("Email: \(email) | Password: \(password)")
+                }
+            )
             
             // Sign Up Text
             HStack {
