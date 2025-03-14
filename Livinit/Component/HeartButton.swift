@@ -1,0 +1,27 @@
+//
+//  HeartButton.swift
+//  Livinit
+//
+//  Created by T-Bo Rabin on 3/11/25.
+//
+
+import SwiftUI
+
+struct HeartButton: View {
+    @Binding var isFilled: Bool
+    
+    var body: some View {
+        Button(action: {
+            isFilled.toggle()
+        }) {
+            Image(systemName: isFilled ? "heart.fill" : "heart")
+                .foregroundColor(.accent)
+                .padding(6)
+        }
+        .padding(8)
+    }
+}
+
+#Preview {
+    HeartButton(isFilled: .constant(false))
+}
