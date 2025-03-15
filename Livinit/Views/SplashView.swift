@@ -12,15 +12,14 @@ struct SplashView: View {
     
     var body: some View {
         ZStack {
-            // Color.white.edgesIgnoringSafeArea(.all)
-            
             VStack {
                 Image("livinit-logo")
                     .resizable()
                     .scaledToFit()
-                    .frame(width: 150, height: 150)
+                    .frame(width: 180, height: 180)
                     .scaleEffect(isAnimating ? 1.0 : 0.8)
                     .opacity(isAnimating ? 1.0 : 0.5)
+                    .padding(.bottom, 70)
             }
         }
         .onAppear {
