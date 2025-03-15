@@ -11,7 +11,8 @@ import SwiftUI
 struct LivinitApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            // ContentView()           // Start From the Main Screen
+            AuthNavigationView()    // Start From the Onboarding Screens
         }
     }
 }
