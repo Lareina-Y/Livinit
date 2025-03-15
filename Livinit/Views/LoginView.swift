@@ -11,6 +11,7 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     @State private var isPasswordVisible: Bool = false
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         VStack(spacing: 20) {
@@ -50,6 +51,8 @@ struct LoginView: View {
                 title: "Login",
                 action: {
                     print("Email: \(email) | Password: \(password)")
+                    // Navigate to main screen after successful login
+                    authViewModel.navigateTo(.main)
                 }
             )
             
@@ -58,7 +61,9 @@ struct LoginView: View {
                 Text("Don't have an account?")
                     .foregroundColor(.gray)
                 
-                NavigationLink(destination: SignupView()) {
+                Button(action: {
+                    authViewModel.navigateTo(.signup)
+                }) {
                     Text("Sign Up")
                         .foregroundColor(.accent)
                         .bold()
@@ -97,6 +102,7 @@ struct LoginView: View {
                 }
             }
             .padding(.top, 5)
+            Spacer()
         }
     }
 }
@@ -104,4 +110,5 @@ struct LoginView: View {
 // Preview
 #Preview {
     LoginView()
+        .environmentObject(AuthViewModel())
 }
