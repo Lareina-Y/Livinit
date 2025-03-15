@@ -16,6 +16,9 @@ struct StartView: View {
             PrimaryButton(
                 title: "GET STARTED",
                 action: {
+                    // Mark that user has seen the start screen
+                    authViewModel.markStartScreenAsSeen()
+                    // Navigate to login
                     authViewModel.navigateTo(.login)
                 }
             )

@@ -19,7 +19,14 @@ struct AuthNavigationView: View {
                         .onAppear {
                             // Simulate splash screen delay
                             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                                authViewModel.navigateTo(.start)
+                                // Check if user has seen start screen before
+                                if authViewModel.hasSeenStartScreen {
+                                    // If yes, go directly to login
+                                    authViewModel.navigateTo(.login)
+                                } else {
+                                    // If no, show start screen
+                                    authViewModel.navigateTo(.start)
+                                }
                             }
                         }
                 
