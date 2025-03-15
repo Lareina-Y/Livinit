@@ -30,16 +30,23 @@ struct StartView: View {
                     // Main center image with blue circle border
                     ZStack {
                         Circle()
-                            .stroke(Color.accentColor, lineWidth: 8)
+                            .trim(from: 0.08, to: 0.42) // Top arc
+                            .stroke(Color.accentColor, lineWidth: 12)
                             .frame(width: 280, height: 280)
-                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
+                            .shadow(color: Color.accentColor.opacity(0.4), radius: 8, x: 0, y: 2)
+                        
+                        Circle()
+                            .trim(from: 0.58, to: 0.92) // Bottom arc
+                            .stroke(Color.accentColor, lineWidth: 12)
+                            .frame(width: 280, height: 280)
+                            .shadow(color: Color.accentColor.opacity(0.4), radius: 8, x: 0, y: -2)
                         
                         Image("bg-1")
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                             .frame(width: 250, height: 250)
                             .clipShape(Circle())
-                            .shadow(color: Color.black.opacity(0.15), radius: 8, x: 0, y: 4)
+                            .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 0)
                             .scaleEffect(mainImageScale)
                             .animation(
                                 Animation.easeInOut(duration: 3.0)
