@@ -151,6 +151,7 @@ struct StartView: View {
                     .font(.title)
                     .bold()
                     .foregroundColor(.black)
+                    .padding(.horizontal, 30)
                     .padding(.bottom, 20)
                 
                 // Get Started Button
