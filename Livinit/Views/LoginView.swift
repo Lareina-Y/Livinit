@@ -86,14 +86,6 @@ struct LoginView: View {
                 }
 
                 Button(action: {
-                    print("Facebook Login")
-                }) {
-                    Image("facebook-logo")
-                        .resizable()
-                        .frame(width: 30, height: 30)
-                }
-
-                Button(action: {
                     print("Apple Login")
                 }) {
                     Image("apple-logo")
