@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var selectedTab: Int = 0
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         TabView(selection: $selectedTab) {
@@ -54,4 +55,5 @@ struct ContentView: View {
 // Preview
 #Preview {
     ContentView()
+        .environmentObject(AuthViewModel())
 }
