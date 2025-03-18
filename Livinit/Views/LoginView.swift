@@ -80,7 +80,7 @@ struct LoginView: View {
                 Button(action: {
                     print("Google Login")
                 }) {
-                    Image("google-logo")
+                    Image("Google-logo")
                         .resizable()
                         .frame(width: 30, height: 30)
                 }

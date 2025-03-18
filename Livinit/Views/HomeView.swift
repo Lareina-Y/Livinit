@@ -31,7 +31,7 @@ struct HomeView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 16) {
                                 DesignCardView(
-                                    designName: "Modern Living Room 2",
+                                    designName: "Modern Living Room 1",
                                     description: "living room for 6",
                                     price: "$1200.00",
                                     rating: 5.0,
