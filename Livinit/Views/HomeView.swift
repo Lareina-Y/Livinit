@@ -31,36 +31,30 @@ struct HomeView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 16) {
                                 DesignCardView(
-                                    roomImage: "living.room",
-                                    roomType: "Living Room",
-                                    designName: "Modern Living Room",
+                                    designName: "Modern Living Room 2",
                                     description: "living room for 6",
                                     price: "$1200.00",
                                     rating: 5.0,
                                     action: { print("living room 1 card tapped")},
-                                    imageName: "bg-2"
+                                    imageName: "minimalist_small_1"
                                 )
                                 
                                 DesignCardView(
-                                    roomImage: "bed.room",
-                                    roomType: "Bed Room",
-                                    designName: "Classic Bedroom",
-                                    description: "master bedroom",
+                                    designName: "Modern Living Room 2",
+                                    description: "living room ",
                                     price: "$1500.00",
                                     rating: 4.8,
-                                    action: { print("bed room card tapped")},
-                                    imageName: "bg-3"
+                                    action: { print("living room 2 card tapped")},
+                                    imageName: "minimalist_small_2"
                                 )
                                 
                                 DesignCardView(
-                                    roomImage: "living.room",
-                                    roomType: "Dining Room",
-                                    designName: "Modern Dining Room",
-                                    description: "dining room for 8",
+                                    designName: "Modern Living Room 3",
+                                    description: "living room for 8",
                                     price: "$1500.00",
                                     rating: 4.7,
-                                    action: {print("living room 2 card tapped")},
-                                    imageName: "bg-4"
+                                    action: {print("living room 3 card tapped")},
+                                    imageName: "minimalist_small_3"
                                 )
                                 
                             }
@@ -145,8 +139,7 @@ struct SectionHeaderView: View {
 
 // MARK: - Design Card View
 struct DesignCardView: View {
-    let roomImage: String
-    let roomType: String
+//    let roomType: String
     let designName: String
     let description: String
     let price: String
@@ -159,18 +152,15 @@ struct DesignCardView: View {
         Button(action: action) {
             VStack(alignment: .leading, spacing: 0) {
                 ZStack(alignment: .topTrailing) {
-                    // Room image
-//                    RoomImageView(imageName: roomImage)
-//                        .frame(height: 180)
-//                        .clipped()
                     Image(imageName)
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 120, height: 200)
-                    
-                    //
+                        .frame(height: 200)
+
                     // Heart button
-                    HeartButton(isFilled: $isHeartFilled) }
+                    HeartButton(isFilled: $isHeartFilled)
+                        .padding([.top, .trailing], 8)
+                }
                 
                 VStack(alignment: .leading, spacing: 4) {
                     HStack {
@@ -213,83 +203,6 @@ struct DesignCardView: View {
         }
         }
         
-}
-
-// MARK: - Room Image View
-struct RoomImageView: View {
-    let imageName: String
-    
-    var body: some View {
-        // In a real app, this would load an image from assets or a URL
-        // For this demo, we'll create a placeholder
-        ZStack {
-            Color.gray.opacity(0.1)
-            
-            if imageName == "living.room" {
-                // Living room placeholder
-                ZStack {
-                    // Floor
-                    Rectangle()
-                        .fill(Color(UIColor.systemBrown).opacity(0.7))
-                        .frame(width: 160, height: 80)
-                        .offset(y: 40)
-                    
-                    // Walls
-                    ZStack {
-                        // Back wall
-                        Rectangle()
-                            .fill(Color.accent.opacity(0.2))
-                            .frame(width: 160, height: 120)
-                            .offset(y: -20)
-                        
-                        // Side wall
-                        Rectangle()
-                            .fill(Color.accent.opacity(0.3))
-                            .frame(width: 80, height: 120)
-                            .offset(x: -40, y: -20)
-                    }
-                    
-                    // Basic furniture
-                    HStack(spacing: 40) {
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.7))
-                            .frame(width: 40, height: 30)
-                            .offset(y: 25)
-                        
-                        Rectangle()
-                            .fill(Color.gray.opacity(0.7))
-                            .frame(width: 40, height: 30)
-                            .offset(y: 25)
-                    }
-                }
-            } else {
-                // Bedroom placeholder
-                ZStack {
-                    // Floor
-                    Rectangle()
-                        .fill(Color(UIColor.systemBrown).opacity(0.7))
-                        .frame(width: 160, height: 80)
-                        .offset(y: 40)
-                    
-                    // Walls
-                    ZStack {
-                        // Back wall
-                        Rectangle()
-                            .fill(Color.yellow.opacity(0.2))
-                            .frame(width: 160, height: 120)
-                            .offset(y: -20)
-                    }
-                    
-                    // Bed
-                    Rectangle()
-                        .fill(Color.yellow.opacity(0.7))
-                        .frame(width: 80, height: 50)
-                        .offset(y: 25)
-                }
-            }
-        }
-        .cornerRadius(16)
-    }
 }
 
 // MARK: - Design Banner View

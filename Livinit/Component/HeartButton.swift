@@ -9,13 +9,18 @@ import SwiftUI
 
 struct HeartButton: View {
     @Binding var isFilled: Bool
-    
+
     var body: some View {
         Button(action: {
             isFilled.toggle()
         }) {
-            Image(systemName: isFilled ? "heart.fill" : "heart")
-                .foregroundColor(.accent)
+            Image(systemName: "heart.fill")
+                .foregroundColor(isFilled ? .accentColor : .white)
+                .overlay(
+                    Image(systemName: "heart")
+                        .foregroundColor(.white)
+                        .opacity(isFilled ? 0 : 1)
+                )
                 .padding(6)
         }
         .padding(8)
