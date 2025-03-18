@@ -20,21 +20,26 @@ struct CustomTextField: View {
             Image(systemName: icon)
                 .foregroundColor(.gray)
             
-            if isSecure {
-                if isPasswordVisible {
-                    TextField(placeholder, text: $text)
+            ZStack(alignment: .leading) {
+                if isSecure {
+                    if isPasswordVisible {
+                        TextField(placeholder, text: $text)
+                    } else {
+                        SecureField(placeholder, text: $text)
+                    }
                 } else {
-                    SecureField(placeholder, text: $text)
+                    TextField(placeholder, text: $text)
                 }
-                
+            }
+            .frame(height: 20) // Fix the height of the text field
+            
+            if isSecure {
                 Button(action: {
                     isPasswordVisible.toggle()
                 }) {
                     Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
                         .foregroundColor(.gray)
                 }
-            } else {
-                TextField(placeholder, text: $text)
             }
         }
         .padding()

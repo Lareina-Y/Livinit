@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     var body: some View {
         TabView {
             HomeView()
@@ -47,4 +49,5 @@ struct ContentView: View {
 // Preview
 #Preview {
     ContentView()
+        .environmentObject(AuthViewModel())
 }

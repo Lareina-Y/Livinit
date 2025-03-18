@@ -8,11 +8,27 @@
 import SwiftUI
 
 struct ProfileView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
+    
     var body: some View {
-        Text("Profile Page")
+        VStack(spacing: 20) {
+            Text("Profile Page")
+                        
+            // Logout button
+            PrimaryButton(
+                title: "Logout",
+                action: {
+                    // Navigate back to login page
+                    authViewModel.navigateTo(.login)
+                },
+                backgroundColor: .red
+            )
+            .padding(.bottom, 30)
+        }
     }
 }
 
 #Preview {
     ProfileView()
+        .environmentObject(AuthViewModel())
 }
