@@ -232,7 +232,7 @@ struct DesignBannerView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.white)
                 
-                NavigationLink(destination: VisualizeView()) {
+                NavigationLink(destination: NewDesignView()) {
                     PrimaryButton(
                         title: "Design My Room",
                         action: {navigateToVisualize = true},
@@ -245,7 +245,7 @@ struct DesignBannerView: View {
             
             // link design my room button to visualizeView
             .navigationDestination(isPresented: $navigateToVisualize) {
-                VisualizeView()
+                NewDesignView()
             }
             
         }

@@ -124,7 +124,7 @@ struct ExploreHeaderView: View {
             Spacer()
             
             HStack(spacing: 16) {
-                NavigationLink(destination: VisualizeView()) {
+                NavigationLink(destination: NewDesignView()) {
                     Image(systemName: "plus")
                         .font(.system(size: 22))
                         .foregroundColor(.primary)

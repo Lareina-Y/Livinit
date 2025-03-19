@@ -27,7 +27,7 @@ struct ContentView: View {
                 }
                 .tag(1)
             
-            VisualizeView()
+            NewDesignView()
                 .tabItem {
                     Image(systemName: "plus")
                     Text("Create")
